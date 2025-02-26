@@ -4,7 +4,7 @@ import { onMounted } from 'vue';
 import Swiper from 'swiper';
 import 'swiper/css';
 
-
+/*
 onMounted(() => {
     new Swiper('.project-details-slider', {
       loop: true,
@@ -20,7 +20,7 @@ onMounted(() => {
       }
     });
 })
-
+*/
 </script>
 
 <template>
