@@ -1,5 +1,42 @@
 <script setup>
-import Modal from './ProjectModal.vue';
+import { ref, nextTick } from 'vue';
+
+import projectInfo from '/portfolio-info/projectInfo.json';
+
+const ICONS = {
+  "Camera": "bi-camera-video",
+  "HumanProfile": "bi-file-earmark-person-fill"
+}
+
+const modals = ref([]); // Refs a los modales
+const activeModal = ref(null); // Guardará el índice del modal activo
+
+const openModal = async (index) => {
+  
+  activeModal.value = index;
+
+};
+
+const closeModal = () => {
+  activeModal.value = null;
+};
+
+const projects = projectInfo["projects"]
+
+//Swiper code
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+
+let modules = [Navigation, Pagination, Autoplay];
+
+let paginationConfig = {
+    type: "bullets",
+    clickable: true
+}
 </script>
 
 <template>
@@ -13,154 +50,83 @@ import Modal from './ProjectModal.vue';
 
         <div class="container">
 
-        <div class="row gy-4">
+          <div class="row gy-4">
 
-            <div class="col-lg-4 col-md-6 project-item d-flex" data-aos="fade-up" data-aos-delay="100" id="openModal-Invisicam">
-            <div class="icon flex-shrink-0"><i class="bi bi-camera-video"></i></div>
-            <div>
-                <h4 class="title">Invisicam</h4><h5 class="subtitle">Nodejs, Python, Cloudflare</h5>
-                <p class="description">Red de Raspberries con cámaras integradas para su monitorización en tiempo real</p>
+            <div v-for="(project, index) in projects" :key="index" @click="openModal(index)" class="col-lg-4 col-md-6 project-item d-flex" data-aos="fade-up" data-aos-delay="200" id="openModal">
+                <div class="icon flex-shrink-0"><i class="bi" :class="ICONS[project.icon]"></i></div>
+                <div>
+                    <h4 class="title">{{project.name }}</h4><h5 class="subtitle">{{ project.technologies.split(", ").slice(0, 3).join(", ") }}</h5>
+                    <p class="description">{{ project.smallDescription }}</p>
+                </div>
             </div>
-            </div>
-            <!-- End Service Item -->
 
-            <div class="col-lg-4 col-md-6 project-item d-flex" data-aos="fade-up" data-aos-delay="200" id="openModal">
-            <div class="icon flex-shrink-0"><i class="bi bi-file-earmark-person-fill"></i></div>
-            <div>
-                <h4 class="title">Portfolio</h4><h5 class="subtitle">Vue.js, Bootstrap, Javascript</h5>
-                <p class="description">Portfolio de mi carrera profesional, diseñado para mostrar mi trayectoria profesional, habilidades, experiencia y proyectos más destacados</p>
-            </div>
-            </div><!-- End Service Item -->
+            <section v-for="(project, index) in projects" :key="'modal-' + index" ref="modals" :class="{ 'activeModal': activeModal === index }" class="project-modal"  @click.self="closeModal">    
+                <div class="container modal-content" data-aos="fade-up" data-aos-delay="100">
+                  <span @click="closeModal" class="close">&times;</span>
 
+                  <div class="row gy-4">
 
-        </div>
+                    <div class="col-lg-8">
+                      <div class="project-details-slider swiper init-swiper">
+
+                        <swiper class="swiper-wrapper align-items-center"
+                          :modules="modules"
+                          :slides-per-view="'auto'"
+                          :loop="true"
+                          :speed="600"
+                          navigation
+                          :pagination="paginationConfig"
+                          :autoplay="{ delay: 5000}"
+                        >
+
+                          <swiper-slide class="swiper-slide" v-for="slide in project.multimedia">
+                            <img class="img-fluid" :src="slide" alt="">
+                          </swiper-slide>
+
+                        </swiper>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                      <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                        <h2>{{ project.name }}</h2>
+                        <ul>
+                          <li><strong>Tecnologías más destacadas</strong>: {{ project.technologies }}</li>
+                          <li><strong>URL</strong>: 
+                            <a v-if="project.url != ''" :href="'https://' + project.url">{{ project.url }}</a>
+                            <span v-else>Contenido no disponible</span>
+                          </li>
+                          <li><strong>Código</strong>: 
+                            <a v-if="project.url != ''" :href="project.url">Código</a>
+                            <span v-else>Código no disponible</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <br/>
+                      <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                        <h2>{{ project.fullname }}</h2>
+                        <p v-for="paragraph in project.wholeDescription.split('\n')">{{ paragraph }} </p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+            </section>
+            
+            
+          </div>
 
         </div>
 
     </section><!-- /projects Section -->
 
-
-
-
-
-    <Modal />
-
-    <!-- Modal Section-->
-    <section id="project-modal" class="project-modal">    
-      <div class="container modal-content" data-aos="fade-up" data-aos-delay="100">
-        <span class="close">&times;</span>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="project-details-slider swiper init-swiper">
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img class="img-fluid" src="/img/portfolio/app-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img class="img-fluid" src="/img/portfolio/product-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img class="img-fluid" src="/img/portfolio/branding-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img class="img-fluid" src="/img/portfolio/books-1.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h2>Portfolio</h2>
-              <ul>
-                <li><strong>Tecnologías más destacadas</strong>: Vuejs, ESLint, Prettier, Bootstrap, Github pages</li>
-                <li><strong>URL</strong>: <a href="#">www.example.com</a></li>
-                <li><strong>Código</strong>: <a href="#">www.example.com</a></li>
-              </ul>
-            </div>
-            <br/>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Portfolio de mi carrera profesional</h2>
-              <p>
-                Su objetivo es servir como una carta de presentación digital, permitiendo a los visitantes conocer más sobre mi trabajo y ponerse en contacto conmigo. 
-              </p>
-              <p>
-                El uso de Bootstrap garantiza una experiencia responsiva y una navegación fluida en dispositivos móviles. Por otra parte, Vue.js facilita el mantenimiento y la actualización del sitio, optimizando su rendimiento y escalabilidad.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section id="project-modal-invisicam" class="project-modal">    
-      <div class="container modal-content" data-aos="fade-up" data-aos-delay="100">
-        <span id="closeButton-Invisicam" class="close">&times;</span>
-
-        <div class="row gy-4 project-info">
-
-          <div class="col-lg-8">
-            <div class="project-details-slider swiper init-swiper">
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img class="img-fluid" src="/img/portfolio/app-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img class="img-fluid" src="/img/portfolio/product-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img class="img-fluid" src="/img/portfolio/branding-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img class="img-fluid" src="/img/portfolio/books-1.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h2>Invisicam</h2>
-              <ul>
-                <li><strong>Tecnologías más destacadas</strong>: Nodejs, Python, Cloudflare, Jquery, Bootstrap</li>
-                <li><strong>URL</strong>: No disponible</li>
-                <li><strong>Código</strong>: No disponible</li>
-              </ul>
-            </div>
-            <br/>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Sistema de Monitoreo con Raspberry Pi</h2>
-              <p>
-                Cada Raspberry cuenta con su propia página web, donde se pueden visualizar las imágenes capturadas y almacenar registros. Además, se ha desarrollado un servidor central que monitorea el estado de cada dispositivo, permitiendo verificar qué Raspberries están activas o inactivas en cualquier momento.
-              </p>
-              <p>
-                Las Raspberries están escritas en Python, usando la librería Picamera2. Posteriormente con Cloudflare se crea un túnel para conectarse a la cámara de forma segura. <br/>
-                El servidor fue escrito en Nodejs, siguiendo una arquitectura MVC. Este debe escuchar cuando se encienden las Raspberries y hacerles una llamada periodicamente para comprobar si siguen vivas.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
 </template>
+
+<style scoped>
+.activeModal {
+  display: block !important;
+  margin-top: 0px;
+}
+</style>

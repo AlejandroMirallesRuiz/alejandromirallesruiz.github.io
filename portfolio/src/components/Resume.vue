@@ -35,7 +35,7 @@
 
                 <div class="resume-item">
                 <h4>Desarrollador Web</h4>
-                <h5>21 de marzo, 2023 - 1 de Junio, 2023</h5>
+                <h5>Marzo, 2023 - Junio, 2023</h5>
                 <p><em>Record Go Mobility, Castellón</em></p>
                 <ul>
                     <li>Integración automatizada de tarifas ERP-Web mediante API</li>
