@@ -1,22 +1,6 @@
 {
     "projects" : [
         {
-            "name": "Portfolio",
-            "fullname": "Portfolio de mi carrera profesional",
-            "technologies": "Vue.js, ESLint, Prettier, Bootstrap, Github pages, Javascript",
-            "smallDescription": "Portfolio de mi carrera profesional, diseñado para mostrar mi trayectoria profesional, habilidades, experiencia y proyectos más destacados",
-            "wholeDescription": "Su objetivo es servir como una carta de presentación digital, permitiendo a los visitantes conocer más sobre mi trabajo y ponerse en contacto conmigo. \n El uso de Bootstrap garantiza una experiencia responsiva y una navegación fluida en dispositivos móviles. Por otra parte, Vue.js facilita el mantenimiento y la actualización del sitio, optimizando su rendimiento y escalabilidad.",
-            "url": "www.example.com",
-            "code": "www.example.com",
-            "multimedia":[
-                "/img/portfolio/app-1.jpg",
-                "/img/portfolio/product-1.jpg",
-                "/img/portfolio/branding-1.jpg",
-                "/img/portfolio/books-1.jpg"
-            ],
-            "icon": "HumanProfile"
-        },
-        {
             "name": "Invisicam",
             "fullname": "Sistema de Monitoreo con Raspberry Pi",
             "technologies": "Nodejs, Python, Cloudflare, Picamera2, Eslint, Jquery, Bootstrap",
@@ -31,6 +15,23 @@
                 "/img/portfolio/books-1.jpg"
             ],
             "icon": "Camera"
+        },
+        {
+            "name": "Portfolio",
+            "fullname": "Portfolio de mi carrera profesional",
+            "technologies": "Vue.js, ESLint, Prettier, Bootstrap, Github pages, Javascript",
+            "smallDescription": "Portfolio de mi carrera profesional, diseñado para mostrar mi trayectoria profesional, habilidades, experiencia y proyectos más destacados",
+            "wholeDescription": "Su objetivo es servir como una carta de presentación digital, permitiendo a los visitantes conocer más sobre mi trabajo y ponerse en contacto conmigo. \n El uso de Bootstrap garantiza una experiencia responsiva y una navegación fluida en dispositivos móviles. Por otra parte, Vue.js facilita el mantenimiento y la actualización del sitio, optimizando su rendimiento y escalabilidad.",
+            "url": "www.example.com",
+            "code": "www.example.com",
+            "multimedia":[
+                "/img/portfolio/app-1.jpg",
+                "/img/portfolio/product-1.jpg",
+                "/img/portfolio/branding-1.jpg",
+                "/img/portfolio/books-1.jpg"
+            ],
+            "icon": "HumanProfile"
         }
+        
     ]
 }

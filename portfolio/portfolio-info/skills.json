@@ -1,0 +1,60 @@
+{
+    "skills":[
+        {
+            "name": "MySQL",
+            "image": "/img/technologies/MySQL.png"
+        },
+        {
+            "name": "MongoDB",
+            "image": "/img/technologies/MongoDb.png"
+        },
+        {
+            "name": "Redis",
+            "image": "/img/technologies/redis.png"
+        },
+        {
+            "name": "Docker",
+            "image": "/img/technologies/docker.png"
+        },
+        {
+            "name": "Bootstrap",
+            "image": "/img/technologies/bootstrap.png"
+        },
+        {
+            "name": "NodeJS",
+            "image": "/img/technologies/nodejs.png"
+        },
+        {
+            "name": "Symphony",
+            "image": "/img/technologies/Symphony.png"
+        },
+        {
+            "name": "Yii",
+            "image": "/img/technologies/yii.png"
+        },
+        {
+            "name": "Vue.js",
+            "image": "/img/technologies/vuejs.png"
+        },
+        {
+            "name": "Jquery",
+            "image": "/img/technologies/Jquery.png"
+        },
+        {
+            "name": "Python",
+            "image": "/img/technologies/python.png"
+        },
+        {
+            "name": "PHP",
+            "image": "/img/technologies/php.png"
+        },
+        {
+            "name": "Javascript",
+            "image": "/img/technologies/Javascript.png"
+        },
+        {
+            "name": "Java",
+            "image": "/img/technologies/java.png"
+        }
+    ]
+}

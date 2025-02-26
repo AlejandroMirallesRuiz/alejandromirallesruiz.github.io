@@ -1,7 +1,7 @@
 <script setup>
-import { ref, nextTick } from 'vue';
+import { ref } from 'vue';
 
-import projectInfo from '/portfolio-info/projectInfo.json';
+import projectInfo from '/portfolio-info/projects.json';
 
 const ICONS = {
   "Camera": "bi-camera-video",

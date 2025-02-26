@@ -1,0 +1,36 @@
+{
+    "education":[
+        {
+            "title": "Grado Superior",
+            "name": "Dessarrollo de Aplicaciones Web",
+            "endDateYear": 2023,
+            "startDate": 2021,
+            "endDate": 2023,
+            "centre": "IES El Caminàs, Castellón"
+        },
+        {
+            "title": "Master",
+            "name": "Inteligencia Artifical y Big Data",
+            "endDateYear": 2024,
+            "startDate": 2023,
+            "endDate": 2024,
+            "centre": "IES El Caminàs, Castellón"
+        }
+    ],
+    "workExperience":[
+        {
+            "position": "Web Developer",
+            "company": "Record Go",
+            "endDateYear": 2023,
+            "startDate": "Marzo, 2023",
+            "endDate": "Junio, 2023",
+            "responsabilities": [
+                "Integración automatizada de tarifas ERP-Web mediante API",
+                "Migración de datos en formato Excel a bases de datos MySQL",
+                "Optimización de la presentación de datos en el sitio web, asegurando precisión y mejorando la experiencia del usuario",
+                "Desarrollo de plantillas de email HTML responsivas, siguiendo las directrices del dpto. de marketing"
+            ]
+        }
+    ]
+
+}

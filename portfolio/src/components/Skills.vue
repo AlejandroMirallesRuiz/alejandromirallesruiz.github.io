@@ -1,4 +1,7 @@
 <script setup>
+import skillsInfo from '/portfolio-info/skills.json';
+const skills = skillsInfo['skills'];
+
 // import Swiper core and required modules
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
@@ -97,103 +100,13 @@ onMounted(() => {
                 :autoplay="{ delay: 1000, disableOnInteraction: false}"
                 :breakpoints="breakpointsConfig"
             >
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/MySQL.png" class="testimonial-img" alt="">
-                    <h3>MySQL</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
+              <swiper-slide v-for="skill in skills" class="swiper-slide">
+                <div class="testimonial-item">
+                    <img :src="skill.image" class="testimonial-img" alt="">
+                  <h3>{{ skill.name }}</h3>
+                </div>
+              </swiper-slide>
 
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/MongoDb.png" class="testimonial-img" alt="">
-                    <h3>MongoDB</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/redis.png" class="testimonial-img" alt="">
-                    <h3>Redis</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/docker.png" class="testimonial-img" alt="">
-                    <h3>Docker</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/bootstrap.png" class="testimonial-img" alt="">
-                    <h3>Boostrap</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/nodejs.png" class="testimonial-img" alt="">
-                    <h3>NodeJS</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/Symphony.png" class="testimonial-img" alt="">
-                    <h3>Symphony</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/yii.png" class="testimonial-img" alt="">
-                    <h3>Yii</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/vuejs.png" class="testimonial-img" alt="">
-                    <h3>Vue.js</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/Jquery.png" class="testimonial-img" alt="">
-                    <h3>Jquery</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/python.png" class="testimonial-img" alt="">
-                    <h3>Python</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/php.png" class="testimonial-img" alt="">
-                    <h3>PHP</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/Javascript.png" class="testimonial-img" alt="">
-                    <h3>Javascript</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
-
-                <swiper-slide class="swiper-slide">
-                    <div class="testimonial-item">
-                    <img src="/img/technologies/java.png" class="testimonial-img" alt="">
-                    <h3>Java</h3>
-                    </div>
-                </swiper-slide><!-- End testimonial item -->
 
             </swiper>
         </div>

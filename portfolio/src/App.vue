@@ -26,7 +26,6 @@
 
     <SkillSection />
 
-    
   </main>
 
   <FooterComponent />
