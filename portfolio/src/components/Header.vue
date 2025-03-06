@@ -1,9 +1,55 @@
 <script setup>
+import { ref} from 'vue'
+// Nav menu
+const menuOptions = [
+    {
+     name: "Home",
+     icon: "bi-house",
+     id: "hero",   
+    },
+    {
+     name: "Sobre mí",
+     icon: "bi-person",
+     id: "about",   
+    },
+    {
+     name: "Currículum Vitae",
+     icon: "bi-file-earmark-text",
+     id: "resume",   
+    },
+    {
+     name: "Proyectos",
+     icon: "bi-folder",
+     id: "projects",   
+    },
+    {
+     name: "Tecnologías",
+     icon: "bi-laptop",
+     id: "skills",   
+    },
+]
+
+// Menu icon
+const isHeaderVisible = ref(false);
+
+const toggleHeader = () => {
+  isHeaderVisible.value = !isHeaderVisible.value;
+};
+
+const hideNav = () => {
+  if (isHeaderVisible.value) {
+    toggleHeader();
+  }
+};
+
+function closeNav(){
+    isHeaderVisible.value = false
+}
 </script>
 
 <template>
-    <header id="header" class="header dark-background d-flex flex-column">
-        <i class="header-toggle d-xl-none bi bi-list"></i>
+    <header id="header" class="header dark-background d-flex flex-column" :class="isHeaderVisible ? 'header-show' : ''"  @click.self="closeNav">
+        <i @click="toggleHeader" class="header-toggle d-xl-none bi" :class="isHeaderVisible ? 'bi-x' : 'bi-list'"></i>
 
         <div class="profile-img">
         <img src="/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
@@ -24,11 +70,11 @@
 
         <nav id="navmenu" class="navmenu">
         <ul>
-            <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-            <li><a href="#about"><i class="bi bi-person navicon"></i> Sobre mí</a></li>
-            <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Currículum Vitae</a></li>
-            <li><a href="#projects"><i class="bi bi-folder navicon"></i> Proyectos</a></li>
-            <li><a href="#skills"><i class="bi bi-laptop navicon"></i> Tecnologías</a></li>
+            <li v-for="(option, index) in menuOptions">
+                <a :href="`#${option.id}`" class="active" @click="hideNav">
+                    <i class="bi navicon" :class="option.icon, { active: index === 0 }"></i>{{option.name}}
+                </a>
+            </li>
         </ul>
         </nav>
 

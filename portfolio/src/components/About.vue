@@ -28,7 +28,7 @@
                 <div class="col-lg-6">
                 <ul>
                     <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span style="font-size: 95%;">Miralles.Ruiz.Alejandro@gmail.com</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>AlejandroMirallesRuiz.github.io</span></li>
                 </ul>
                 </div>
             </div>

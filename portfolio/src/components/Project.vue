@@ -18,7 +18,7 @@ const openModal = async (index) => {
 };
 
 const closeModal = () => {
-  activeModal.value = null;
+  activeModal.value = null;  
 };
 
 const projects = projectInfo["projects"]
@@ -80,7 +80,7 @@ let paginationConfig = {
                         >
 
                           <swiper-slide class="swiper-slide" v-for="slide in project.multimedia">
-                            <img class="img-fluid" :src="slide" alt="">
+                            <img class="img-project img-fluid" :src="slide" alt="">
                           </swiper-slide>
 
                         </swiper>
@@ -128,5 +128,17 @@ let paginationConfig = {
 .activeModal {
   display: block !important;
   margin-top: 0px;
+}
+
+.img-project{
+  
+  max-width: 600px;
+  max-height: 500px;
+
+  object-fit: contain;
+}
+
+.close{
+  z-index: 1000;
 }
 </style>
