@@ -913,7 +913,7 @@ section,
 
 .close {
   position: absolute;
-  top: 10px;
+  top: 0px;
   right: 15px;
   font-size: 24px;
   cursor: pointer;
@@ -980,3 +980,14 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
+
+
+
+
+/** 
+SWIPER CONFIG
+*/
+
+.swiper-wrapper{
+  align-items: center !important;
+}
