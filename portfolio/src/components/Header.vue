@@ -52,7 +52,7 @@ function closeNav(){
         <i @click="toggleHeader" class="header-toggle d-xl-none bi" :class="isHeaderVisible ? 'bi-x' : 'bi-list'"></i>
 
         <div class="profile-img">
-        <img src="/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="/img/Foto_CV2.jpeg" alt="" class="img-fluid rounded-circle">
         </div>
 
         <a href="index.html" class="logo d-flex align-items-center justify-content-center">

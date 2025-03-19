@@ -11,7 +11,7 @@
         
         <div class="row gy-4 justify-content-center">
             <div class="col-lg-4">
-            <img src="/img/my-profile-img.jpg" class="img-fluid" alt="">
+            <img src="/img/Foto_CV3.jpeg" class="img-fluid" alt="">
             </div>
             <div class="col-lg-8 content">
             <h2>Web Developer</h2>
