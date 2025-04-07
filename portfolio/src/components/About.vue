@@ -21,14 +21,13 @@
             <div class="row">
                 <div class="col-lg-6">
                 <ul>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Telefono:</strong> <span>+34 653 016 510</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Teléfono:</strong> <span>+34 653 016 510</span></li>
                     <li><i class="bi bi-chevron-right"></i> <strong>Ciudad:</strong> <span>Castellón, España</span></li>
                 </ul>
                 </div>
                 <div class="col-lg-6">
                 <ul>
                     <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span style="font-size: 95%;">Miralles.Ruiz.Alejandro@gmail.com</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>AlejandroMirallesRuiz.github.io</span></li>
                 </ul>
                 </div>
             </div>

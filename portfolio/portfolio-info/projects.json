@@ -14,21 +14,6 @@
                 "/img/proyectos/Invisicam/Desarrollo_Imagen.png"
             ],
             "icon": "Camera"
-        },
-        {
-            "name": "Portfolio",
-            "fullname": "Portfolio de mi carrera profesional",
-            "technologies": "Vue.js, ESLint, Prettier, Bootstrap, Github pages, Javascript",
-            "smallDescription": "Portfolio de mi carrera profesional, diseñado para mostrar mi trayectoria profesional, habilidades, experiencia y proyectos más destacados",
-            "wholeDescription": "Su objetivo es servir como una carta de presentación digital, permitiendo a los visitantes conocer más sobre mi trabajo y ponerse en contacto conmigo. \n El uso de Bootstrap garantiza una experiencia responsiva y una navegación fluida en dispositivos móviles. Por otra parte, Vue.js facilita el mantenimiento y la actualización del sitio, optimizando su rendimiento y escalabilidad.",
-            "url": "AlejandroMirallesRuiz.github.io",
-            "code": "github.com/AlejandroMirallesRuiz/alejandromirallesruiz.github.io.git",
-            "multimedia":[
-                "/img/proyectos/Portfolio/Home.JPG",
-                "/img/proyectos/Portfolio/movil.png"
-            ],
-            "icon": "HumanProfile"
         }
-        
     ]
 }
